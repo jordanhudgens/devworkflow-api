@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
 
   def logged_in
     if @current_user
-      render json: { logged_in: true, user: @current_user, organization: @current_user.organization }
+      render json: { logged_in: true, user: @current_user }
     else
       render json: { logged_in: false }
     end
