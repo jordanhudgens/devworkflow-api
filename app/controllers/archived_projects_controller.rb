@@ -6,14 +6,17 @@ class ArchivedProjectsController < ApplicationController
     render json: @projects, status: :ok
   end
 
-  def create
-    # @project = Project.new(project_params)
-    # @project.user_id = @current_user.id
-    #
-    # if @project.save
-    #   render json: @project, status: :created
-    # else
-    #   render :new
-    # end
+  def update
+    if @project.user_id == @current_user.id
+      @project = Project.find(params[:id])
+
+      if @project.archived!
+        render json: @project
+      else
+        render json: @project.errors, status: :unprocessable_entity
+      end
+    else
+      render json: { status: 401 }
+    end
   end
 end
