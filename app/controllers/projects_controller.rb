@@ -19,7 +19,7 @@ class ProjectsController < ApplicationController
 
   private
 
-    def location_params
+    def project_params
       params.require(:project).permit(
         :title,
         :main_objective,
