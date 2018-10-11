@@ -2,6 +2,8 @@ class Project < ApplicationRecord
   belongs_to :user
 
   validates_presence_of :title, :main_objective
+  validates :main_objective, length: { maximum: 130 }
+  validates :title, length: { maximum: 55 }
 
   enum status: {
     active:   0,
