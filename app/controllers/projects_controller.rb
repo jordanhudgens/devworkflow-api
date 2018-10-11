@@ -2,7 +2,7 @@ class ProjectsController < ApplicationController
   include AuthenticationConcern
 
   def index
-    @projects = @current_user.projects.active
+    @projects = @current_user.projects.active.sort_by_last_updated
     render json: @projects, status: :ok
   end
 
