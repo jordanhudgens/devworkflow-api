@@ -7,9 +7,9 @@ class ArchivedProjectsController < ApplicationController
   end
 
   def update
-    if @project.user_id == @current_user.id
-      @project = Project.find(params[:id])
+    @project = Project.find(params[:id])
 
+    if @project.user_id == @current_user.id
       if @project.archived!
         render json: @project
       else
