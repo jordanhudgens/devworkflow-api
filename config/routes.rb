@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :projects, only: [:index, :create]
   resources :archived_projects, only: [:index, :update]
+  resources :unarchive_projects, only: [:update]
   resources :registrations, only: [:create]
   resources :sessions, only: [:create]
   delete :logout, to: 'sessions#logout'
