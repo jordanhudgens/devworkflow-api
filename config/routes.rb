@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :projects, only: [:index]
+  resources :projects, only: [:index, :create]
   resources :registrations, only: [:create]
   resources :sessions, only: [:create]
   delete :logout, to: 'sessions#logout'
