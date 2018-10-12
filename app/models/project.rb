@@ -5,6 +5,8 @@ class Project < ApplicationRecord
   validates :main_objective, length: { maximum: 130 }
   validates :title, length: { maximum: 55 }
 
+  has_many :project_line_items, dependent: :destroy
+
   enum status: {
     active:   0,
     archived: 1
