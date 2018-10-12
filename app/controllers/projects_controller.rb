@@ -17,6 +17,16 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def destroy
+    @project = Project.find(params[:id])
+
+    if @project.user_id == @current_user.id
+      @devo.destroy
+    else
+      render json: { status: 401 }
+    end
+  end
+
   private
 
     def project_params

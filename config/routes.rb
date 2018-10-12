@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :projects, only: [:index, :create]
+  resources :projects, only: [:index, :create, :destroy]
   resources :archived_projects, only: [:index, :update]
   resources :unarchive_projects, only: [:update]
   resources :registrations, only: [:create]
