@@ -6,4 +6,6 @@ class ProjectSerializer < ActiveModel::Serializer
              :updated_at
 
   belongs_to :user
+
+  has_many :project_line_items
 end
