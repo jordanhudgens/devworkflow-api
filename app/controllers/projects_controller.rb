@@ -21,7 +21,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
 
     if @project.user_id == @current_user.id
-      @devo.destroy
+      @project.destroy
     else
       render json: { status: 401 }
     end
