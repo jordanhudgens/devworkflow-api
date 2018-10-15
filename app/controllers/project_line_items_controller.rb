@@ -21,7 +21,7 @@ class ProjectLineItemsController < ApplicationController
       params.require(:project_line_item).permit(
         :title,
         :description,
-        :status,
+        :completed,
       )
     end
 end

@@ -2,7 +2,7 @@ class ProjectLineItemSerializer < ActiveModel::Serializer
   attributes :id,
             :title,
             :description,
-            :status
+            :completed
 
   has_one :project
 end
