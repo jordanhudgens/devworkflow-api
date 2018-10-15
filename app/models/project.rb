@@ -23,7 +23,7 @@ class Project < ApplicationRecord
     def build_project_line_items
       line_items = [
         "Wireframes",
-        "Sitemaps",
+        "Sitemap",
         "User Stories",
         "UML Diagrams",
         "Hi-Res Designs",
