@@ -5,4 +5,5 @@ class User < ApplicationRecord
   validates_presence_of :email, :name
 
   has_many :projects, dependent: :destroy
+  has_many :check_list_items, dependent: :destroy
 end
