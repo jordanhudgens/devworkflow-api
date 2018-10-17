@@ -22,6 +22,12 @@ class ProjectLineItemsController < ApplicationController
         :title,
         :description,
         :completed,
+        check_list_items_attributes: [
+          :id,
+          :title,
+          :completed,
+          :user_id
+        ]
       )
     end
 end

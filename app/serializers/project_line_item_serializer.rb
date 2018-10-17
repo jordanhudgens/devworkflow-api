@@ -5,4 +5,5 @@ class ProjectLineItemSerializer < ActiveModel::Serializer
             :completed
 
   has_one :project
+  has_many :check_list_items
 end
