@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :check_list_items
-  resources :project_line_items, only: [:update]
+  resources :project_line_items, only: [:show, :update]
   resources :projects, only: [:index, :create, :destroy]
   resources :archived_projects, only: [:index, :update]
   resources :unarchive_projects, only: [:update]

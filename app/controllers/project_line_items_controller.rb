@@ -11,6 +11,10 @@ class ProjectLineItemsController < ApplicationController
     end
   end
 
+  def show
+    render json: @project_line_item
+  end
+
   private
 
     def set_project_line_item
