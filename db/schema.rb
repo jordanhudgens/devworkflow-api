@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_15_204853) do
+ActiveRecord::Schema.define(version: 2018_10_17_202902) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "check_list_items", force: :cascade do |t|
+    t.bigint "project_line_item_id"
+    t.text "title"
+    t.boolean "completed", default: false
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_line_item_id"], name: "index_check_list_items_on_project_line_item_id"
+    t.index ["user_id"], name: "index_check_list_items_on_user_id"
+  end
 
   create_table "project_line_items", force: :cascade do |t|
     t.bigint "project_id"
@@ -44,6 +55,8 @@ ActiveRecord::Schema.define(version: 2018_10_15_204853) do
     t.string "name"
   end
 
+  add_foreign_key "check_list_items", "project_line_items"
+  add_foreign_key "check_list_items", "users"
   add_foreign_key "project_line_items", "projects"
   add_foreign_key "projects", "users"
 end
