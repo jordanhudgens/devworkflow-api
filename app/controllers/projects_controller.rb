@@ -27,12 +27,27 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def update
+    @project = Project.find(params[:id])
+
+    if @project.user_id == @current_user.id
+      if @project.update(project_params)
+        render json: @project
+      else
+        render json: @project.errors, status: :unprocessable_entity
+      end
+    else
+      render json: { status: 401 }
+    end
+  end
+
   private
 
     def project_params
       params.require(:project).permit(
         :title,
         :main_objective,
+        :status
       )
     end
 end
