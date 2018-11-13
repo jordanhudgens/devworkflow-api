@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = @current_user.projects.active.sort_by_last_updated
-    render json: @projects, include: 'id,main_objective,project_line_items,status,title,updated_at,user'
+    render json: @projects, include: 'id,main_objective,project_line_items,status,title,updated_at,user,project_line_items.check_list_items'
   end
 
   def create
