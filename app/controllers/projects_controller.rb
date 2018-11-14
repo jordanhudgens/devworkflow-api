@@ -11,7 +11,7 @@ class ProjectsController < ApplicationController
     @project.user_id = @current_user.id
 
     if @project.save
-      render json: @project, status: :created
+      render json: @project, include: 'id,main_objective,project_line_items,status,title,updated_at,user,project_line_items.check_list_items'
     else
       render :new
     end
