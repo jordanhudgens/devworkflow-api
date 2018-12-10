@@ -32,7 +32,7 @@ class ProjectLineItemsController < ApplicationController
           :completed,
           :user_id
         ],
-        item_images_raw: []
+        item_images: []
       )
     end
 end
