@@ -3,7 +3,8 @@ class ProjectLineItemSerializer < ActiveModel::Serializer
              :title,
              :description,
              :completed,
-             :project_id
+             :project_id,
+             :image_urls
 
   has_one :project
   has_many :check_list_items

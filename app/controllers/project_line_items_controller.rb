@@ -31,7 +31,8 @@ class ProjectLineItemsController < ApplicationController
           :title,
           :completed,
           :user_id
-        ]
+        ],
+        item_images_raw: []
       )
     end
 end
